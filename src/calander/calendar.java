@@ -69,7 +69,20 @@ public class calendar {
 		int first=Integer.parseInt(splitedValue[0]);
 		int second=Integer.parseInt(splitedValue[1]);
 		
-		makeCalendar(first,second);
+		// 반복 시작
+		
+		for(int i =0; i <first; i++) {
+			for(int j=0; j<second; j++) {
+				inputValue = scanner.nextLine();
+				splitedValue = inputValue.split(",");
+				
+				first=Integer.parseInt(splitedValue[0]);
+				second=Integer.parseInt(splitedValue[1]);
+				//캘린더 만들기 메소드
+				makeCalendar(first,second);
+			}
+		}		
+		System.out.println("Search close");
 		scanner.close();
 	}
 	
