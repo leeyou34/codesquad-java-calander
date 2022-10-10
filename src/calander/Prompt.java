@@ -1,6 +1,8 @@
 package calander;
 
+import java.io.Serializable;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Prompt {
@@ -30,7 +32,7 @@ public class Prompt {
 		printMenu();
 		
 		Scanner scanner = new Scanner(System.in);
-		Calendar cal = new Calendar();
+		Calendar cal = Calendar.getInstance();
 				
 
 		while (true) {
@@ -46,7 +48,7 @@ public class Prompt {
 		scanner.close();
 	}		
 	
-	private void cmdCal(Scanner s, Calendar c) {
+	private void cmdCal(Scanner s, GregorianCalendar c) {
 		// TODO Auto-generated method stub
 		int month =1;
 		int year = 2017;
