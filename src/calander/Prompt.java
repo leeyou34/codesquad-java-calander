@@ -1,7 +1,6 @@
 package calander;
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Prompt {
@@ -31,11 +30,8 @@ public class Prompt {
 		printMenu();
 		
 		Scanner scanner = new Scanner(System.in);
-		GregorianCalendar cal = new GregorianCalendar();
-		
-		int month = 1;
-		int year =2017;
-		
+		Calendar cal = new Calendar();
+				
 
 		while (true) {
 
@@ -50,16 +46,14 @@ public class Prompt {
 		scanner.close();
 	}		
 	
-	private void cmdCal(Scanner s, GregorianCalendar c) {
+	private void cmdCal(Scanner s, Calendar c) {
 		// TODO Auto-generated method stub
 		int month =1;
 		int year = 2017;
 		System.out.println("년도를 입력하세요.(exit: -1)");
 		System.out.println("YEAR> ");
-		year = s.nextInt();
+		year = s.nextInt();	
 		
-		if(year == -1)
-			break;
 		
 		System.out.println("달을 입력하세요");
 		System.out.print("Month> ");
@@ -70,7 +64,7 @@ public class Prompt {
 			return;
 		}
 		
-		//c.printCalendar(year, month);
+		c.printCalendar(year, month);
 	}
 	
 	private void cmdSearch() {
