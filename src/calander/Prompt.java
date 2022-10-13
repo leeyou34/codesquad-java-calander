@@ -48,7 +48,7 @@ public class Prompt {
 		scanner.close();
 	}		
 	
-	private void cmdCal(Scanner s, GregorianCalendar c) {
+	private void cmdCal(Scanner s, Calendar cal) {
 		// TODO Auto-generated method stub
 		int month =1;
 		int year = 2017;
@@ -66,7 +66,7 @@ public class Prompt {
 			return;
 		}
 		
-		c.printCalendar(year, month);
+		cal.printCalendar(year, month);
 	}
 	
 	private void cmdSearch() {
