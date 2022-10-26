@@ -6,6 +6,48 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Prompt {
+	
+    private static final int[] MAX_DAYS = {31,28,31,30,31,30,31,31,30,31,30,31};
+    private static final int[] LEAP_MAX_DAYS = {31,29,31,30,31,30,31,31,30,31,30,31};
+	
+	
+    public int maxDaysOfMonth(int year, int month) {
+        if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+            return LEAP_MAX_DAYS[month - 1];
+        }
+        else {
+            return MAX_DAYS[month - 1];
+        }
+    }
+	
+	
+	 public void printCalendar(int year, int month, int weekday) {
+	        System.out.printf("\t\t<<%4d년 %3d월>>\n",year, month);
+	        System.out.println("\tSU\tMO\tTU\tWE\tTH\tFR\tSA");
+	        System.out.println("\t--------------------------");
+
+	        int maxDays = maxDaysOfMonth(year,month);
+
+	        for (int k=0; k<weekday; k++) {
+	            System.out.print("\t");
+	        }
+
+	        for (int j=1; j<=7-weekday; j++) {
+	            System.out.printf("\t%d",j);
+	        }
+	        System.out.println();
+
+	        for (int i=8-weekday; i<=maxDays; i++) {
+	            System.out.printf("\t%d",i);
+	            if (i % 7 == 7 - weekday) {
+	                System.out.println();
+	            }
+	        }
+	        System.out.println();
+	        System.out.println();
+	    }
+
+	
 
 	public void printMenu() {
 		System.out.println("+------------------+");
